@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Progress | StudyFlow</title>
+    <link rel="stylesheet" href="progress.css">
+    <script src="progress.js" defer></script>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <a href="index.html" class="brand">
+                <span class="brand-icon">S</span>
+                <span>StudyFlow</span>
+            </a>
+
+            <p class="nav-heading">WORKSPACE</p>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link">
+                    <span>▦</span> Dashboard
+                </a>
+                <a href="index.html#tasks" class="nav-link">
+                    <span>☷</span> My Tasks
+                </a>
+                <a href="planner.html" class="nav-link">
+                    <span>▦</span> Study Planner
+                </a>
+                <a href="index.html#timer" class="nav-link">
+                    <span>◷</span> Focus Timer
+                </a>
+                <a href="progress.html" class="nav-link active">
+                    <span>↗</span> My Progress
+                </a>
+                <a href="goal.html" class="nav-link">
+                    <span>◎</span> Goals
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <button id="themeToggle" class="theme-button" type="button">
+                    <span id="themeIcon">☾</span>
+                    <span id="themeText">Dark mode</span>
+                </button>
+                <p class="sidebar-caption">Small steps. Big progress.</p>
+            </div>
+        </aside>
+
+        <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button class="menu-button" id="menuToggle"
+                    type="button" aria-label="Toggle navigation">☰</button>
+                <div>
+                    <p class="eyebrow">YOUR JOURNEY, VISUALIZED</p>
+                    <h1>My Progress <span>✦</span></h1>
+                    <p class="page-subtitle">
+                        Every small step counts. See how far you've come.
+                    </p>
+                </div>
+            </header>
+
+            <section class="summary-grid">
+                <article class="summary-card">
+                    <div class="summary-icon purple">☷</div>
+                    <p>Completed tasks</p>
+                    <h2 id="completedTasks">0</h2>
+                    <span>Tasks marked as completed</span>
+                </article>
+
+                <article class="summary-card">
+                    <div class="summary-icon blue">◷</div>
+                    <p>Focus time</p>
+                    <h2 id="focusTime">0 min</h2>
+                    <span>Recorded focus minutes</span>
+                </article>
+
+                <article class="summary-card">
+                    <div class="summary-icon pink">◎</div>
+                    <p>Goals achieved</p>
+                    <h2 id="goalsAchieved">0</h2>
+                    <span>Targets you have reached</span>
+                </article>
+            </section>
+
+            <section class="progress-layout">
+                <article class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">YOUR CONSISTENCY</p>
+                            <h2>Weekly activity</h2>
+                        </div>
+                        <span class="heading-icon">↗</span>
+                    </div>
+
+                    <p class="section-description">
+                        Tasks completed on each day during the last seven days.
+                    </p>
+
+                    <div class="chart" id="weeklyChart"
+                        role="img" aria-label="Weekly completed tasks chart"></div>
+
+                    <p class="chart-note" id="chartNote">
+                        Your recorded activity will appear here.
+                    </p>
+                </article>
+
+                <article class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">AT A GLANCE</p>
+                            <h2>Productivity summary</h2>
+                        </div>
+                        <span class="heading-icon">✧</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <div class="summary-row-icon purple">☷</div>
+                        <div class="summary-row-content">
+                            <span>All tasks</span>
+                            <strong id="allTasks">0</strong>
+                        </div>
+                    </div>
+
+                    <div class="summary-row">
+                        <div class="summary-row-icon blue">◷</div>
+                        <div class="summary-row-content">
+                            <span>Scheduled sessions</span>
+                            <strong id="scheduledSessions">0</strong>
+                        </div>
+                    </div>
+
+                    <div class="summary-row">
+                        <div class="summary-row-icon pink">◎</div>
+                        <div class="summary-row-content">
+                            <span>Active goals</span>
+                            <strong id="activeGoals">0</strong>
+                        </div>
+                    </div>
+
+                    <div class="summary-row">
+                        <div class="summary-row-icon green">✓</div>
+                        <div class="summary-row-content">
+                            <span>Task completion rate</span>
+                            <strong id="completionRate">0%</strong>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="panel achievements-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">CELEBRATE YOUR EFFORT</p>
+                        <h2>Your achievements</h2>
+                    </div>
+                    <span class="heading-icon">★</span>
+                </div>
+
+                <div class="achievement-grid" id="achievements"></div>
+            </section>
+
+            <div class="data-note">
+                <span>ⓘ</span>
+                <p>
+                    Statistics are calculated from the information saved in
+                    this browser. Your dashboard, planner, and goals must use
+                    compatible storage keys for all figures to be accurate.
+                </p>
+            </div>
+
+            <footer class="page-footer">
+                <p>Look how far you've come. <span>♥</span> StudyFlow</p>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner | StudyFlow</title>
+    <link rel="stylesheet" href="planner.css">
+    <script src="planner.js" defer></script>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <a href="index.html" class="brand">
+                <span class="brand-icon">S</span>
+                <span>StudyFlow</span>
+            </a>
+
+            <p class="nav-heading">WORKSPACE</p>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link">
+                    <span>▦</span> Dashboard
+                </a>
+                <a href="index.html#tasks" class="nav-link">
+                    <span>☷</span> My Tasks
+                </a>
+                <a href="planner.html" class="nav-link active">
+                    <span>▦</span> Study Planner
+                </a>
+                <a href="index.html#timer" class="nav-link">
+                    <span>◷</span> Focus Timer
+                </a>
+                <a href="index.html#progress" class="nav-link">
+                    <span>↗</span> My Progress
+                </a>
+                <a href="index.html#goals" class="nav-link">
+                    <span>◎</span> Goals
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <button id="themeToggle" class="theme-button" type="button">
+                    <span id="themeIcon">☾</span>
+                    <span id="themeText">Dark mode</span>
+                </button>
+                <p class="sidebar-caption">Small steps. Big progress.</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button class="menu-button" id="menuToggle"
+                    type="button" aria-label="Toggle navigation">☰</button>
+
+                <div>
+                    <p class="eyebrow">YOUR PERSONAL SCHEDULE</p>
+                    <h1>Study Planner <span>✦</span></h1>
+                    <p class="page-subtitle">
+                        Make time for what matters, one session at a time.
+                    </p>
+                </div>
+            </header>
+
+            <section class="summary-grid">
+                <article class="summary-card">
+                    <div class="summary-icon purple">▦</div>
+                    <p>Total sessions</p>
+                    <h2 id="totalSessions">0</h2>
+                    <span>All scheduled sessions</span>
+                </article>
+
+                <article class="summary-card">
+                    <div class="summary-icon blue">◷</div>
+                    <p>Today's sessions</p>
+                    <h2 id="todaySessions">0</h2>
+                    <span>Planned for today</span>
+                </article>
+
+                <article class="summary-card">
+                    <div class="summary-icon pink">◴</div>
+                    <p>Planned study time</p>
+                    <h2 id="totalHours">0h</h2>
+                    <span>Across all sessions</span>
+                </article>
+            </section>
+
+            <section class="planner-layout">
+                <article class="panel add-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">GET ORGANIZED</p>
+                            <h2>Add a study session</h2>
+                        </div>
+                        <span class="heading-icon">＋</span>
+                    </div>
+
+                    <form id="studyForm">
+                        <div class="field">
+                            <label for="subject">Subject</label>
+                            <input id="subject" type="text"
+                                placeholder="e.g. Japanese, DBMS" required
+                                maxlength="80">
+                        </div>
+
+                        <div class="field">
+                            <label for="studyDate">Study date</label>
+                            <input id="studyDate" type="date" required>
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="startTime">Start time</label>
+                                <input id="startTime" type="time" required>
+                            </div>
+                            <div class="field">
+                                <label for="endTime">End time</label>
+                                <input id="endTime" type="time" required>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="category">Category</label>
+                            <select id="category">
+                                <option value="Study">Study</option>
+                                <option value="Revision">Revision</option>
+                                <option value="Assignment">Assignment</option>
+                                <option value="Exam Prep">Exam preparation</option>
+                                <option value="Language">Language learning</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="studyNotes">Notes <span>(optional)</span></label>
+                            <textarea id="studyNotes" rows="3"
+                                placeholder="Topics to cover, goals, etc."
+                                maxlength="500"></textarea>
+                        </div>
+
+                        <p id="formMessage" class="form-message"
+                            role="status" aria-live="polite"></p>
+
+                        <button type="submit" class="primary-button">
+                            + Add session
+                        </button>
+                    </form>
+                </article>
+
+                <article class="panel schedule-panel">
+                    <div class="panel-heading schedule-heading">
+                        <div>
+                            <p class="eyebrow">YOUR LEARNING ROUTINE</p>
+                            <h2>My schedule</h2>
+                        </div>
+                        <span class="calendar-decoration">▦</span>
+                    </div>
+
+                    <div class="schedule-toolbar">
+                        <div class="field filter-field">
+                            <label for="filterDate">Choose a date</label>
+                            <input id="filterDate" type="date">
+                        </div>
+                        <button id="showAllBtn" type="button"
+                            class="secondary-button">Show all</button>
+                    </div>
+
+                    <div class="schedule-caption" id="scheduleCaption">
+                        Your upcoming study sessions
+                    </div>
+
+                    <div id="studySessions" class="session-list"
+                        aria-live="polite"></div>
+                </article>
+            </section>
+
+            <footer class="page-footer">
+                <p>Made with focus and consistency <span>♥</span> StudyFlow</p>
+            </footer>
+        </main>
+    </div>
+
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+</body>
+</html>

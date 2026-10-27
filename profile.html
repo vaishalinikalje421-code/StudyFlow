@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | StudyFlow</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>StudyFlow</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html">
+                    <i class="fa-solid fa-house"></i> Dashboard
+                </a>
+                <a href="planner.html">
+                    <i class="fa-solid fa-calendar-days"></i> Planner
+                </a>
+                <a href="goals.html">
+                    <i class="fa-solid fa-bullseye"></i> Goals
+                </a>
+                <a href="progress.html">
+                    <i class="fa-solid fa-chart-line"></i> My Progress
+                </a>
+                <a href="profile.html" class="active">
+                    <i class="fa-solid fa-user"></i> My Profile
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <button id="themeToggle" class="theme-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                    <span>Toggle Theme</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header class="page-header">
+                <div>
+                    <p class="eyebrow">YOUR ACCOUNT</p>
+                    <h1>My Profile</h1>
+                    <p class="subtitle">Manage your personal information and study preferences.</p>
+                </div>
+            </header>
+
+            <!-- Profile Overview -->
+            <section class="profile-overview">
+                <div class="avatar" id="profileAvatar">S</div>
+
+                <div class="profile-summary">
+                    <h2 id="displayName">Student Name</h2>
+                    <p id="displayEmail">student@example.com</p>
+                    <span class="profile-badge">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        StudyFlow Student
+                    </span>
+                </div>
+
+                <button type="button" class="edit-profile-btn" id="editProfileBtn">
+                    <i class="fa-solid fa-pen"></i> Edit Profile
+                </button>
+            </section>
+
+            <!-- Profile Form -->
+            <section class="profile-card">
+                <div class="section-heading">
+                    <div>
+                        <h2>Personal Information</h2>
+                        <p>Keep your profile details up to date.</p>
+                    </div>
+                </div>
+
+                <form id="profileForm">
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName"
+                                   placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email"
+                                   placeholder="Enter your email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="course">Course / Degree</label>
+                            <input type="text" id="course"
+                                   placeholder="e.g. B.E. Computer Engineering">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="institution">College / Institution</label>
+                            <input type="text" id="institution"
+                                   placeholder="Enter your institution">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="studyGoal">Daily Study Goal</label>
+                            <select id="studyGoal">
+                                <option value="1">1 hour per day</option>
+                                <option value="2">2 hours per day</option>
+                                <option value="3" selected>3 hours per day</option>
+                                <option value="4">4 hours per day</option>
+                                <option value="5">5 hours per day</option>
+                                <option value="6">6+ hours per day</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="studyStyle">Preferred Study Style</label>
+                            <select id="studyStyle">
+                                <option value="Pomodoro">Pomodoro Technique</option>
+                                <option value="Deep Work">Deep Work</option>
+                                <option value="Short Sessions">Short Study Sessions</option>
+                                <option value="Flexible">Flexible Study</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="reset" class="cancel-btn" id="cancelBtn">
+                            Cancel
+                        </button>
+                        <button type="submit" class="save-btn">
+                            <i class="fa-solid fa-floppy-disk"></i> Save Changes
+                        </button>
+                    </div>
+
+                    <p id="saveMessage" class="save-message" role="status"></p>
+                </form>
+            </section>
+
+            <!-- Study Preferences -->
+            <section class="profile-card preferences-card">
+                <div class="section-heading">
+                    <div>
+                        <h2>Study Preferences</h2>
+                        <p>Your personal productivity settings.</p>
+                    </div>
+                </div>
+
+                <div class="preference-item">
+                    <div class="preference-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div>
+                        <h3>Focus Sessions</h3>
+                        <p>Use focused sessions to improve concentration.</p>
+                    </div>
+                </div>
+
+                <div class="preference-item">
+                    <div class="preference-icon">
+                        <i class="fa-solid fa-chart-simple"></i>
+                    </div>
+                    <div>
+                        <h3>Track Your Progress</h3>
+                        <p>Review completed tasks and study achievements.</p>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="page-footer">
+                StudyFlow · Build better habits, one day at a time.
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>

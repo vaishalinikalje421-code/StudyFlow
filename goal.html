@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Goals | StudyFlow</title>
+    <link rel="stylesheet" href="goal.css">
+    <script src="goal.js" defer></script>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <a href="index.html" class="brand">
+                <span class="brand-icon">S</span>
+                <span>StudyFlow</span>
+            </a>
+
+            <p class="nav-heading">WORKSPACE</p>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link">
+                    <span>▦</span> Dashboard
+                </a>
+                <a href="index.html#tasks" class="nav-link">
+                    <span>☷</span> My Tasks
+                </a>
+                <a href="planner.html" class="nav-link">
+                    <span>▦</span> Study Planner
+                </a>
+                <a href="index.html#timer" class="nav-link">
+                    <span>◷</span> Focus Timer
+                </a>
+                <a href="progress.html" class="nav-link">
+                    <span>↗</span> My Progress
+                </a>
+                <a href="goals.html" class="nav-link active">
+                    <span>◎</span> Goals
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <button id="themeToggle" class="theme-button" type="button">
+                    <span id="themeIcon">☾</span>
+                    <span id="themeText">Dark mode</span>
+                </button>
+                <p class="sidebar-caption">Small steps. Big progress.</p>
+            </div>
+        </aside>
+
+        <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button class="menu-button" id="menuToggle"
+                    type="button" aria-label="Toggle navigation">☰</button>
+                <div>
+                    <p class="eyebrow">DREAM IT. PLAN IT. ACHIEVE IT.</p>
+                    <h1>My Goals <span>✦</span></h1>
+                    <p class="page-subtitle">
+                        Turn your ambitions into small, achievable steps.
+                    </p>
+                </div>
+            </header>
+
+            <section class="summary-grid">
+                <article class="summary-card">
+                    <div class="summary-icon purple">◎</div>
+                    <p>Total goals</p>
+                    <h2 id="totalGoals">0</h2>
+                    <span>Your personal targets</span>
+                </article>
+
+                <article class="summary-card">
+                    <div class="summary-icon blue">↗</div>
+                    <p>In progress</p>
+                    <h2 id="activeGoals">0</h2>
+                    <span>Goals you're working on</span>
+                </article>
+
+                <article class="summary-card">
+                    <div class="summary-icon pink">★</div>
+                    <p>Achieved</p>
+                    <h2 id="completedGoals">0</h2>
+                    <span>Goals you've reached</span>
+                </article>
+            </section>
+
+            <section class="goals-layout">
+                <article class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">SET YOUR NEXT TARGET</p>
+                            <h2>Create a goal</h2>
+                        </div>
+                        <span class="heading-icon">＋</span>
+                    </div>
+
+                    <form id="goalForm">
+                        <div class="field">
+                            <label for="goalTitle">Goal title</label>
+                            <input id="goalTitle" type="text"
+                                placeholder="e.g. Learn Japanese daily"
+                                maxlength="100" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="goalCategory">Category</label>
+                            <select id="goalCategory">
+                                <option value="Study">Academic study</option>
+                                <option value="Language">Language learning</option>
+                                <option value="Assignment">Assignments</option>
+                                <option value="Focus">Focus & productivity</option>
+                                <option value="Personal">Personal development</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="goalTarget">Target value</label>
+                            <input id="goalTarget" type="number"
+                                min="1" max="1000000" step="1"
+                                placeholder="e.g. 30" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="goalUnit">Target unit</label>
+                            <select id="goalUnit">
+                                <option value="minutes">Minutes</option>
+                                <option value="hours">Hours</option>
+                                <option value="sessions">Sessions</option>
+                                <option value="tasks">Tasks</option>
+                                <option value="days">Days</option>
+                                <option value="chapters">Chapters</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="goalDeadline">Deadline (optional)</label>
+                            <input id="goalDeadline" type="date">
+                        </div>
+
+                        <p id="goalMessage" class="form-message"
+                            role="status" aria-live="polite"></p>
+
+                        <button class="primary-button" type="submit">
+                            + Create goal
+                        </button>
+                    </form>
+                </article>
+
+                <article class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">YOUR PERSONAL MILESTONES</p>
+                            <h2>My goals</h2>
+                        </div>
+                        <span class="calendar-decoration">◎</span>
+                    </div>
+
+                    <div class="filter-row">
+                        <label for="goalFilter">Show:</label>
+                        <select id="goalFilter">
+                            <option value="all">All goals</option>
+                            <option value="active">In progress</option>
+                            <option value="completed">Achieved</option>
+                        </select>
+                    </div>
+
+                    <div id="goalsList" class="goals-list"
+                        aria-live="polite"></div>
+                </article>
+            </section>
+
+            <footer class="page-footer">
+                <p>Progress, not perfection. <span>♥</span> StudyFlow</p>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>
